@@ -52,6 +52,33 @@ header {
           align-items: center;
 }
 
+.location i {
+  margin-right: 1rem;
+}
+
+.pink-btn {
+  color: #fff;
+  background: -webkit-gradient(linear, left top, right bottom, from(#ff79da), color-stop(120%, #9356dc));
+  background: linear-gradient(to bottom right, #ff79da 0%, #9356dc 120%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-radius: 30px;
+  width: 50%;
+  height: 3rem;
+  cursor: pointer;
+}
+
 main {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -101,6 +128,8 @@ main .main-top {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
   width: 100%;
   height: 20rem;
   gap: 1.5rem;
@@ -130,52 +159,8 @@ main .main-top {
   background: #f2f2f2;
 }
 
-.how-it-works .create {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 4rem;
-  width: 80%;
-  border-radius: 20px;
-  -webkit-box-shadow: 3px 3px 8px 5px #ddd;
-          box-shadow: 3px 3px 8px 5px #ddd;
-  background: #f2f2f2;
-  -ms-flex-direction: row;
-      flex-direction: row;
-}
-
-.how-it-works .go {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  height: 4rem;
-  width: 80%;
-  border-radius: 20px;
-  -webkit-box-shadow: 3px 3px 8px 5px #ddd;
-          box-shadow: 3px 3px 8px 5px #ddd;
-  background: #f2f2f2;
-  -ms-flex-direction: row;
-      flex-direction: row;
+.how-it-works .choose i {
+  margin-right: 2rem;
 }
 
 .cards {
@@ -198,24 +183,54 @@ main .main-top {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   margin-top: 2rem;
+  padding-bottom: 4rem;
 }
 
-.cards .card1, .cards .card2, .cards .card3, .cards .card4 {
+.cards .card1 {
   height: 15rem;
   width: 85%;
   background-color: #fff;
   border-radius: 20px;
   -webkit-box-shadow: 3px 3px 8px 5px #f2f2f2;
           box-shadow: 3px 3px 8px 5px #f2f2f2;
-  cursor: pointer;
 }
 
-.cards .card1 img, .cards .card2 img, .cards .card3 img, .cards .card4 img {
+.cards .card1 img {
   height: 75%;
   width: 100%;
   border-radius: 20px 20px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+  width: 100%;
+  background: #f2f2f2;
+  border-radius: 20px 20px 0 0;
+  padding-bottom: 2rem;
+}
+
+.dishes {
+  height: 4rem;
+  width: 80%;
+  border-radius: 20px;
+  -webkit-box-shadow: 3px 3px 8px 5px #ddd;
+          box-shadow: 3px 3px 8px 5px #ddd;
+  background: #f2f2f2;
 }
 
 footer {
@@ -234,10 +249,9 @@ footer {
           align-items: baseline;
   color: #fff;
   background: #272727;
-  margin-top: 4rem;
 }
 
-footer h1 {
+footer h2 {
   font-family: "Shrikhand", cursive;
 }
 
