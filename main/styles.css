@@ -8,6 +8,10 @@ body {
   margin: 0;
 }
 
+body h1 {
+  font-weight: bold;
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -79,7 +83,7 @@ header {
   cursor: pointer;
 }
 
-main {
+.main-home {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -95,7 +99,7 @@ main {
           align-items: center;
 }
 
-main .main-top {
+.main-home .main-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,8 +184,6 @@ main .main-top {
   gap: 2rem;
   width: 100%;
   background: #f2f2f2;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
   margin-top: 2rem;
   padding-bottom: 4rem;
 }
@@ -203,7 +205,7 @@ main .main-top {
      object-fit: cover;
 }
 
-.menu {
+.menu-title {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,20 +219,55 @@ main .main-top {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 2rem;
-  width: 100%;
-  background: #f2f2f2;
-  border-radius: 20px 20px 0 0;
-  padding-bottom: 2rem;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  gap: 5rem;
 }
 
-.dishes {
-  height: 4rem;
-  width: 80%;
-  border-radius: 20px;
-  -webkit-box-shadow: 3px 3px 8px 5px #ddd;
-          box-shadow: 3px 3px 8px 5px #ddd;
+.menu-title h1 {
+  font-family: "Shrikhand", cursive;
+}
+
+.menu {
   background: #f2f2f2;
+  border-radius: 20px 20px 0 0;
+  padding-bottom: 5rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menu .menu1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 2rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-bottom: 5rem;
+}
+
+.menu .menu1 .food {
+  height: 6rem;
+  width: 85%;
+  gap: 5px;
+  background-color: #fff;
+  border-radius: 20px;
+  -webkit-box-shadow: 3px 3px 8px 5px #f2f2f2;
+          box-shadow: 3px 3px 8px 5px #f2f2f2;
+}
+
+.menu .menu1 .food h3 {
+  margin: 10px 0 2px 16px;
+}
+
+.menu .menu1 .food p {
+  margin: 10px 0 2px 16px;
 }
 
 footer {

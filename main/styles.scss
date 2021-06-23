@@ -24,6 +24,9 @@ $tertiary-color: #99e2d0;
 body {
   font-family: "Roboto", sans-serif;
   margin: 0;
+  h1 {
+      font-weight: bold
+  }
 }
 
 header {
@@ -58,7 +61,7 @@ header {
     cursor: pointer;
 }
 
-main {
+.main-home {
   @include alignment();
     .main-top {
         @include alignment();
@@ -91,7 +94,6 @@ main {
   gap: 2rem;
   width: 100%;
   background: #f2f2f2;
-  justify-content: space-around;
   margin-top: 2rem;
   padding-bottom: 4rem;
 
@@ -111,19 +113,51 @@ main {
         }
     }
 }
-.menu {
-  @include alignment();
-  gap: 2rem;
-  width: 100%;
-  background: #f2f2f2;
-  border-radius: 20px 20px 0 0;
-  padding-bottom: 2rem;
-  
+
+.menu-title {
+    @include alignment();
+    flex-direction: row;
+    gap: 5rem;
+
+    h1 {
+        font-family: "Shrikhand", cursive; 
+    }
 }
 
-.dishes {
-    @include how-btn();
+.menu {
+    background: #f2f2f2;
+    border-radius: 20px 20px 0 0;
+    padding-bottom: 5rem;
+    align-items: center;
+   .menu1 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        padding-bottom: 5rem;
+        
+        .food {
+            height: 6rem;
+            width: 85%;
+            gap: 5px;
+            
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 3px 3px 8px 5px #f2f2f2;
+
+            h3 {
+                margin: 10px 0 2px 16px;
+            }
+
+            p {
+              margin: 10px 0 2px 16px;  
+            }
+        }
+    } 
 }
+
+
+
 
 footer {
   display: flex;
