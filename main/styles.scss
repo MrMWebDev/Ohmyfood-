@@ -17,6 +17,16 @@ $tertiary-color: #99e2d0;
     background: #f2f2f2;
 }
 
+@mixin pink-btn {
+    color: #fff;
+    background: linear-gradient(to bottom right, $secondary-color 0%, $primary-color 120%);
+    @include alignment();
+    border-radius: 30px;
+    width: 50%;
+    height: 3rem;
+    cursor: pointer;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -30,15 +40,27 @@ body {
 }
 
 header {
-  @include alignment();
-  flex-direction: row;
-  height: 3rem;
-  gap: 4rem;
+    @include alignment();
+    flex-direction: row;
+    height: 3rem;
+    gap: 4rem;
 }
 
 .home-btn {
-  margin-left: 1rem;
+  margin-left: 10px;
   float: left;
+}
+
+.main-home {
+    @include alignment();
+    .main-top {
+        @include alignment();
+        width: 100%;
+        height: 20rem;
+        background: #f2f2f2;
+        
+    }
+  
 }
 
 .location {
@@ -51,40 +73,26 @@ header {
   }
 }
 
-.pink-btn {
-    color: #fff;
-    background: linear-gradient(to bottom right, $secondary-color 0%, $primary-color 120%);
-    @include alignment();
-    border-radius: 30px;
-    width: 50%;
-    height: 3rem;
-    cursor: pointer;
-}
-
-.main-home {
-  @include alignment();
-    .main-top {
-        @include alignment();
-        width: 100%;
-        height: 20rem;
-        background: #f2f2f2;
-        
-    }
-  
+.main-btn {
+    @include pink-btn();
 }
 
 .how-it-works {
     @include alignment();
-    align-content: flex-start;
+    
     width: 100%;
     height: 20rem;
     gap: 1.5rem;
     .choose {
         @include alignment();
+        justify-content: unset;
         flex-direction: row;
+        margin-left: 10px;
         @include how-btn();
+
+
         i {
-            margin-right: 2rem
+            margin: 10px 30px 10px 20px;
         }
     }
   }
@@ -94,22 +102,45 @@ header {
   gap: 2rem;
   width: 100%;
   background: #f2f2f2;
-  margin-top: 2rem;
+  margin: 2rem;
   padding-bottom: 4rem;
+  align-items: unset;
+
+  h1 {
+      margin-left: 30px;
+  }
 
     .card1 {
-        height: 15rem;
-        width: 85%;
+        height: 20rem;
+        width: 90%;
         background-color: #fff;
         border-radius: 20px;
         box-shadow: 3px 3px 8px 5px #f2f2f2;
-        
+        cursor: pointer;
+        margin-left: 30px;
+
+        a {
+            color: #000;
+            font-weight: bold;
+            margin-left: 10px;
+            text-decoration: none;
+        }
+
+        i {
+            float: right;
+            margin-right: 10px;
+        }
+
+        p {
+            margin: 7px 10px;
+        }
 
         img {
             height: 75%;
             width: 100%;
             border-radius: 20px 20px 0 0;
             object-fit: cover;
+            margin-bottom: 15px;
         }
     }
 }
@@ -118,7 +149,7 @@ header {
     @include alignment();
     flex-direction: row;
     gap: 5rem;
-
+    margin-top: 10rem;
     h1 {
         font-family: "Shrikhand", cursive; 
     }
@@ -128,49 +159,71 @@ header {
     background: #f2f2f2;
     border-radius: 20px 20px 0 0;
     padding-bottom: 5rem;
-    align-items: center;
+
+    p {
+      margin: 10px 0 2px 16px;  
+    }
+
+    .main-btn {
+        @include pink-btn();
+        margin-left: 25%
+    }
+
    .menu1 {
         display: flex;
         flex-direction: column;
         gap: 2rem;
-        align-items: center;
+        justify-content: space-around;
+        margin-left: 1rem;
         padding-bottom: 5rem;
         
         .food {
             height: 6rem;
-            width: 85%;
+            width: 95%;
             gap: 5px;
-            
+            cursor: pointer;
             background-color: #fff;
             border-radius: 20px;
-            box-shadow: 3px 3px 8px 5px #f2f2f2;
+            box-shadow: 3px 3px 8px 5px #ddd;
 
             h3 {
                 margin: 10px 0 2px 16px;
             }
 
-            p {
-              margin: 10px 0 2px 16px;  
+            .price {
+                font-weight: bold;
             }
+            
         }
-    } 
+
+        .food-title {
+            border-bottom: solid 2px $tertiary-color;
+            width: fit-content;
+            padding-bottom: 5px;
+        }
+    }
+    
+ 
 }
 
 
 
 
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: baseline;
-  color: #fff;
-  background: #272727;
-  h2 {
-    font-family: "Shrikhand", cursive;
-  }
-  li {
     display: flex;
     flex-direction: column;
-  }
+    justify-content: space-between;
+    align-items: baseline;
+    color: #fff;
+    background: #272727;
+
+    h2 {
+        font-family: "Shrikhand", cursive;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
 }
