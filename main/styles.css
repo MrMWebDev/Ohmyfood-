@@ -72,6 +72,12 @@ header {
   background: #f2f2f2;
 }
 
+.main-home .main-top p {
+  width: 75%;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
 .location {
   background: #ddd;
   width: 100%;
@@ -119,22 +125,48 @@ header {
 }
 
 .how-it-works {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  width: 100%;
+  height: 25rem;
+  gap: 1.5rem;
+  margin: 10px 0;
+}
+
+.how-it-works h1 {
+  margin-left: 25px;
+}
+
+.how-it-works ol {
+  list-style: none;
+  counter-reset: my-awesome-counter;
+  width: 100%;
+  padding: 0;
+  margin-top: 50px;
+}
+
+.how-it-works li {
+  counter-increment: my-awesome-counter;
+  width: 100%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
-  height: 20rem;
-  gap: 1.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0 0 30px 20px;
+}
+
+.how-it-works li::before {
+  content: counter(my-awesome-counter);
+  background: #9356dc;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  line-height: 2rem;
+  color: white;
+  text-align: center;
+  float: left;
+  position: relative;
+  left: 10px;
 }
 
 .how-it-works .choose {
@@ -156,7 +188,7 @@ header {
           justify-content: unset;
   -ms-flex-direction: row;
       flex-direction: row;
-  margin-left: 10px;
+  margin: 0;
   height: 4rem;
   width: 80%;
   border-radius: 20px;
@@ -167,6 +199,7 @@ header {
 
 .how-it-works .choose i {
   margin: 10px 30px 10px 20px;
+  color: #9356dc;
 }
 
 .cards {
@@ -186,7 +219,7 @@ header {
   gap: 2rem;
   width: 100%;
   background: #f2f2f2;
-  margin: 2rem;
+  margin-top: 2rem;
   padding-bottom: 4rem;
   -webkit-box-align: unset;
       -ms-flex-align: unset;
@@ -205,7 +238,7 @@ header {
   -webkit-box-shadow: 3px 3px 8px 5px #f2f2f2;
           box-shadow: 3px 3px 8px 5px #f2f2f2;
   cursor: pointer;
-  margin-left: 30px;
+  margin-left: 20px;
 }
 
 .cards .card1 a {
