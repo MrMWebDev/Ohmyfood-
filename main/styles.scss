@@ -19,11 +19,7 @@ $tertiary-color: #99e2d0;
 
 @mixin pink-btn {
   color: #fff;
-  background: linear-gradient(
-    to bottom right,
-    $secondary-color 0%,
-    $primary-color 120%
-  );
+  background: linear-gradient(to bottom right, $secondary-color 0%, $primary-color 120%);
   @include alignment();
   border-radius: 30px;
   width: 50%;
@@ -36,24 +32,35 @@ $tertiary-color: #99e2d0;
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  margin: 0;
-  h1 {
-    font-weight: bold;
-  }
+    font-family: "Roboto", sans-serif;
+    margin: 0;
+    h2 {
+        font-weight: bolder;
+        margin-left: 25px;
+    }
 }
 
+
+
 header {
-  @include alignment();
-  flex-direction: row;
-  height: 3rem;
-  gap: 4rem;
+    @include alignment();
+    flex-direction: row;
+    justify-content: unset;
+    height: 3rem;
+    gap: 4rem;
+    margin: 10px 0;
+
+    .home-logo {
+        margin-left: 25%
+    }
 }
 
 .home-btn {
   margin-left: 10px;
   float: left;
 }
+
+
 
 .main-home {
   @include alignment();
@@ -83,108 +90,140 @@ header {
 
 .main-btn {
   @include pink-btn();
+  width: 55%;
 }
 
 .how-it-works {
-  width: 100%;
-  height: 25rem;
-  gap: 1.5rem;
-  margin: 10px 0;
-
-  h1 {
-      margin-left: 25px;
-  }
-
-  ol {
-    list-style: none;
-    counter-reset: my-awesome-counter;
     width: 100%;
-    padding: 0;
-    margin-top: 50px;
-  }
-  li {
-    counter-increment: my-awesome-counter;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    margin: 0 0 30px 20px;
-  }
-  li::before {
-    content: counter(my-awesome-counter);
-    background: $primary-color;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 50%;
-    line-height: 2rem;
-    color: white;
-    text-align: center;
-    float: left;
-    position: relative;
-    left: 10px;
-  }
+    height: 25rem;
+    gap: 1.5rem;
+    margin: 10px 0;
 
-  .choose {
-    @include alignment();
-    justify-content: unset;
-    flex-direction: row;
-    margin: 0;
+    ol {
+        list-style: none;
+        counter-reset: my-awesome-counter;
+        width: 100%;
+        padding: 0;
+        margin-top: 50px;
+
     
-    @include how-btn();
 
-    i {
-      margin: 10px 30px 10px 20px;
-      color: $primary-color;
+        li {
+            counter-increment: my-awesome-counter;
+            width: 95%;
+            align-items: center;
+            display: flex;
+            margin: 0 0 30px 20px;
+            font-weight: bold;
+
+            :hover {
+            background-color: #9256dc27;
+            
+                i {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        
     }
-  }
+
+    li::before {
+        content: counter(my-awesome-counter);
+        background: $primary-color;
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+        line-height: 2rem;
+        color: white;
+        text-align: center;
+        float: left;
+        position: relative;
+        left: 10px;
+    }
+  
+    .choose {
+        @include alignment();
+        justify-content: unset;
+        flex-direction: row;
+        margin: 0;
+        @include how-btn();
+        cursor: pointer;  
+
+        i {
+            margin: 10px 30px 10px 20px;
+            color: #888888;
+        }
+    }
+  
 }
 
 .cards {
-  @include alignment();
-  gap: 2rem;
-  width: 100%;
-  background: #f2f2f2;
-  margin-top: 2rem;
-  padding-bottom: 4rem;
-  align-items: unset;
+    @include alignment();
+    gap: 2rem;
+    width: 100%;
+    background: #f2f2f2;
+    margin-top: 2rem;
+    padding-bottom: 4rem;
+    align-items: unset;
 
-  h1 {
-    margin-left: 30px;
-  }
+    .card1 {
+        height: 20rem;
+        width: 90%;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: 3px 3px 8px 5px #f2f2f2;
+        cursor: pointer;
+        margin-left: 20px;
 
-  .card1 {
-    height: 20rem;
-    width: 90%;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 3px 3px 8px 5px #f2f2f2;
-    cursor: pointer;
-    margin-left: 20px;
+        a {
+            color: #000;
+            font-weight: bold;
+            margin-left: 10px;
+            text-decoration: none;
+        }
 
-    a {
-      color: #000;
-      font-weight: bold;
-      margin-left: 10px;
-      text-decoration: none;
+        i {
+            float: right;
+            margin-right: 10px;
+            position: relative;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            
+        }
+
+        p {
+            margin: 7px 10px;
+        }
+
+        img {
+            height: 75%;
+            width: 100%;
+            border-radius: 20px 20px 0 0;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
     }
+}
 
-    i {
-      float: right;
-      margin-right: 10px;
-    }
-
-    p {
-      margin: 7px 10px;
-    }
+.main-menu {
+    width: 100%;
+    height: 1960px;
+}
+.bkgd-pic {
+    width: 100%;
+    height: 275px;
 
     img {
-      height: 75%;
-      width: 100%;
-      border-radius: 20px 20px 0 0;
-      object-fit: cover;
-      margin-bottom: 15px;
+        width: 100%;
+        object-fit: cover;
     }
-  }
+    
 }
+
+
+
 
 .menu-title {
   @include alignment();
@@ -200,6 +239,8 @@ header {
   background: #f2f2f2;
   border-radius: 20px 20px 0 0;
   padding-bottom: 5rem;
+  position: relative;
+  top: -180px;
 
   p {
     margin: 10px 0 2px 16px;
@@ -210,55 +251,60 @@ header {
     margin-left: 25%;
   }
 
-  .menu1 {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    justify-content: space-around;
-    margin-left: 1rem;
-    padding-bottom: 5rem;
+    .menu1 {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        justify-content: space-around;
+        margin-left: 1rem;
+        padding-bottom: 5rem;
 
-    .food {
-      height: 6rem;
-      width: 95%;
-      gap: 5px;
-      cursor: pointer;
-      background-color: #fff;
-      border-radius: 20px;
-      box-shadow: 3px 3px 8px 5px #ddd;
+        .food {
+            height: 6rem;
+            width: 95%;
+            gap: 5px;
+            cursor: pointer;
+            background-color: #fff;
+            border-radius: 20px;
+            box-shadow: 3px 3px 8px 5px #ddd;
 
-      h3 {
-        margin: 10px 0 2px 16px;
-      }
+            h3 {
+                margin: 10px 0 2px 16px;
+            }
 
-      .price {
-        font-weight: bold;
-      }
+            .price {
+                font-weight: bold;
+            }
+        }
+
+        .food-title {
+            border-bottom: solid 2px $tertiary-color;
+            width: fit-content;
+            padding-bottom: 5px;
+        }
     }
-
-    .food-title {
-      border-bottom: solid 2px $tertiary-color;
-      width: fit-content;
-      padding-bottom: 5px;
-    }
-  }
 }
 
 footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: baseline;
-  color: #fff;
-  background: #272727;
-
-  h2 {
-    font-family: "Shrikhand", cursive;
-  }
-
-  li {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-  }
+    justify-content: space-between;
+    align-items: baseline;
+    color: #fff;
+    background: #272727;
+
+    h2 {
+        font-family: "Shrikhand", cursive;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        :before {
+            font-size: 12px;
+            margin-right: 5px;
+        }
+    }
 }
