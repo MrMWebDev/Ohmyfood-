@@ -132,6 +132,8 @@ header .home-logo {
   height: 3rem;
   cursor: pointer;
   width: 55%;
+  -webkit-filter: drop-shadow(0px 5px 5px #aaa);
+          filter: drop-shadow(0px 5px 5px #aaa);
 }
 
 .how-it-works {
@@ -207,8 +209,8 @@ header .home-logo {
   height: 4rem;
   width: 80%;
   border-radius: 20px;
-  -webkit-box-shadow: 3px 3px 8px 5px #ddd;
-          box-shadow: 3px 3px 8px 5px #ddd;
+  -webkit-box-shadow: 0px 6px 10px 0px #ddd;
+          box-shadow: 0px 6px 10px 0px #ddd;
   background: #f2f2f2;
   cursor: pointer;
 }
@@ -247,8 +249,8 @@ header .home-logo {
   width: 90%;
   background-color: #fff;
   border-radius: 20px;
-  -webkit-box-shadow: 3px 3px 8px 5px #f2f2f2;
-          box-shadow: 3px 3px 8px 5px #f2f2f2;
+  -webkit-filter: drop-shadow(0px 5px 5px #aaa);
+          filter: drop-shadow(0px 5px 5px #aaa);
   cursor: pointer;
   margin-left: 20px;
 }
@@ -260,13 +262,21 @@ header .home-logo {
   text-decoration: none;
 }
 
-.cards .card1 i {
+.cards .card1 .far {
   float: right;
   margin-right: 10px;
   position: relative;
   top: 10px;
   right: 20px;
   font-size: 2rem;
+  -webkit-transition: font-weight .3s;
+  transition: font-weight .3s;
+}
+
+.cards .card1 .far:hover, .cards .card1 .far ::before {
+  font-weight: 900;
+  color: #9356dc;
+  cursor: pointer;
 }
 
 .cards .card1 p {
@@ -328,6 +338,15 @@ header .home-logo {
   padding-bottom: 5rem;
   position: relative;
   top: -180px;
+}
+
+.menu .far {
+  font-size: 2rem;
+}
+
+.menu .far :hover {
+  font-weight: 900;
+  color: #9356dc;
 }
 
 .menu p {
@@ -392,12 +411,34 @@ header .home-logo {
   font-weight: bold;
 }
 
-.menu .menu1 .food-title {
-  border-bottom: solid 2px #99e2d0;
-  width: -webkit-fit-content;
-  width: -moz-fit-content;
-  width: fit-content;
-  padding-bottom: 5px;
+.menu .menu1 .food .check {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  float: right;
+  position: relative;
+  background: #99e2d0;
+  width: 62px;
+  height: 97px;
+  bottom: 91px;
+  border-radius: 0 20px 20px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.menu .menu1 .food-title::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 105px;
+  border-bottom: 3px solid #99e2d0;
+  width: 13%;
 }
 
 footer {
