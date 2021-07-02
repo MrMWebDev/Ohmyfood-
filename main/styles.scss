@@ -13,7 +13,7 @@ $tertiary-color: #99e2d0;
   height: 4rem;
   width: 80%;
   border-radius: 20px;
-  box-shadow: 3px 3px 8px 5px #ddd;
+  box-shadow: 0px 6px 10px 0px #ddd;
   background: #f2f2f2;
 }
 
@@ -91,6 +91,7 @@ header {
 .main-btn {
   @include pink-btn();
   width: 55%;
+  filter: drop-shadow(0px 5px 5px #aaa);
 }
 
 .how-it-works {
@@ -172,7 +173,7 @@ header {
         width: 90%;
         background-color: #fff;
         border-radius: 20px;
-        box-shadow: 3px 3px 8px 5px #f2f2f2;
+        filter: drop-shadow(0px 5px 5px #aaa);
         cursor: pointer;
         margin-left: 20px;
 
@@ -181,18 +182,71 @@ header {
             font-weight: bold;
             margin-left: 10px;
             text-decoration: none;
+            
+            
         }
 
-        i {
+        .far {
             float: right;
             margin-right: 10px;
             position: relative;
             top: 10px;
             right: 20px;
             font-size: 2rem;
-            
+            transition: font-weight .3s;
+
+            &:hover,::before {
+                font-weight: 900;
+                color: $primary-color;
+                cursor: pointer;
+            }
+
         }
 
+        // [id="heart"] {
+        //     position: absolute;
+        //     left: -100vw;
+        //   }
+          
+        //   [for="heart"] {
+        //     color: #000;
+        //     cursor: pointer;
+        //     font-size: 2rem;
+        //     align-self: center;
+        //     float: right;  
+        //     position: relative;
+        //     right: 2rem;
+        //     bottom: 3rem;
+        //     transition: color 0.2s ease-in-out;
+        //   }
+          
+        // //   [for="heart"]:hover {
+        // //     color: $primary-color;
+        // //   }
+          
+        //   [for="heart"]::selection {
+        //     font-weight: 900;
+        //     color: none;
+        //     background: transparent;
+        //   }
+          
+        //   [for="heart"]::moz-selection {
+        //     color: none;
+        //     background: transparent;
+        //   }
+          
+        //   [id="heart"]:checked + label {
+        //     font-weight: 900;
+        //     color: $primary-color;
+        //     will-change: font-size;
+        //     animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
+        //   }
+          
+          
+          
+        //   @keyframes heart {0%, 17.5% {font-size: 0;}}
+          
+            
         p {
             margin: 7px 10px;
         }
@@ -206,6 +260,8 @@ header {
         }
     }
 }
+
+
 
 .main-menu {
     width: 100%;
@@ -242,6 +298,16 @@ header {
   position: relative;
   top: -180px;
 
+  .far {
+    
+    font-size: 2rem;
+
+    :hover {
+        font-weight: 900;
+        color: $primary-color;
+    }
+  }
+
   p {
     margin: 10px 0 2px 16px;
   }
@@ -275,12 +341,30 @@ header {
             .price {
                 font-weight: bold;
             }
+
+            .check {
+                display: flex;
+                float: right;
+                position: relative;
+                background: $tertiary-color;
+                width: 62px;
+                height: 97px;
+                bottom: 91px;
+                border-radius: 0 20px 20px 0;
+                align-items: center;
+                justify-content: center;
+                font-size: 2rem;
+                color: #fff;
+            }
         }
 
-        .food-title {
-            border-bottom: solid 2px $tertiary-color;
-            width: fit-content;
-            padding-bottom: 5px;
+        .food-title::before {
+            content: "";
+            position: absolute;
+            left: 32px;
+            top: 105px;
+            border-bottom: 3px solid $tertiary-color;
+            width: 13%;
         }
     }
 }
