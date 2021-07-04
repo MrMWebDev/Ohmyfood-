@@ -245,7 +245,7 @@ header .home-logo {
 }
 
 .cards .card1 {
-  height: 20rem;
+  height: 17rem;
   width: 90%;
   background-color: #fff;
   border-radius: 20px;
@@ -255,6 +255,26 @@ header .home-logo {
   margin-left: 20px;
 }
 
+.cards .card1 .new {
+  color: #278870;
+  background-color: #99e2d0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  right: 0;
+  top: 1rem;
+  border-radius: 5px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .cards .card1 a {
   color: #000;
   font-weight: bold;
@@ -262,21 +282,25 @@ header .home-logo {
   text-decoration: none;
 }
 
-.cards .card1 .far {
+.cards .card1 i {
   float: right;
   margin-right: 10px;
   position: relative;
-  top: 10px;
+  top: 0;
   right: 20px;
   font-size: 2rem;
-  -webkit-transition: font-weight .3s;
-  transition: font-weight .3s;
+  -webkit-transition: color .5s, -webkit-transform .3s;
+  transition: color .5s, -webkit-transform .3s;
+  transition: color .5s, transform .3s;
+  transition: color .5s, transform .3s, -webkit-transform .3s;
 }
 
-.cards .card1 .far:hover, .cards .card1 .far ::before {
+.cards .card1 i:hover, .cards .card1 i ::before {
   font-weight: 900;
   color: #9356dc;
   cursor: pointer;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .cards .card1 p {
@@ -290,6 +314,11 @@ header .home-logo {
   -o-object-fit: cover;
      object-fit: cover;
   margin-bottom: 15px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  position: relative;
+  left: -10px;
+  margin: 0;
 }
 
 .main-menu {
@@ -401,6 +430,10 @@ header .home-logo {
   border-radius: 20px;
   -webkit-box-shadow: 3px 3px 8px 5px #ddd;
           box-shadow: 3px 3px 8px 5px #ddd;
+  -webkit-animation: fadeIn 1s ease-in-out both;
+          animation: fadeIn 1s ease-in-out both;
+  line-height: 1.4;
+  overflow: hidden;
 }
 
 .menu .menu1 .food h3 {
@@ -416,7 +449,6 @@ header .home-logo {
   display: -ms-flexbox;
   display: flex;
   float: right;
-  position: relative;
   background: #99e2d0;
   width: 62px;
   height: 97px;
@@ -430,6 +462,12 @@ header .home-logo {
           justify-content: center;
   font-size: 2rem;
   color: #fff;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-transform: translateX(70px);
+          transform: translateX(70px);
+  position: absolute;
+  right: 0;
 }
 
 .menu .menu1 .food-title::before {
