@@ -169,13 +169,27 @@ header {
     align-items: unset;
 
     .card1 {
-        height: 20rem;
+        height: 17rem;
         width: 90%;
         background-color: #fff;
         border-radius: 20px;
         filter: drop-shadow(0px 5px 5px #aaa);
         cursor: pointer;
         margin-left: 20px;
+
+        .new {
+            color: #278870;
+            background-color: $tertiary-color;
+            display: flex;
+            position: absolute;
+            height: 2rem;
+            width: 5rem;
+            right: 0;
+            top: 1rem;
+            border-radius: 5px;
+            justify-content: center;
+            align-items: center;
+        }
 
         a {
             color: #000;
@@ -186,65 +200,24 @@ header {
             
         }
 
-        .far {
+        i {
             float: right;
             margin-right: 10px;
             position: relative;
-            top: 10px;
+            top: 0;
             right: 20px;
             font-size: 2rem;
-            transition: font-weight .3s;
+            transition: color .5s, transform .3s;
 
             &:hover,::before {
                 font-weight: 900;
                 color: $primary-color;
                 cursor: pointer;
+                transform: scale(1.2);
+                
             }
 
         }
-
-        // [id="heart"] {
-        //     position: absolute;
-        //     left: -100vw;
-        //   }
-          
-        //   [for="heart"] {
-        //     color: #000;
-        //     cursor: pointer;
-        //     font-size: 2rem;
-        //     align-self: center;
-        //     float: right;  
-        //     position: relative;
-        //     right: 2rem;
-        //     bottom: 3rem;
-        //     transition: color 0.2s ease-in-out;
-        //   }
-          
-        // //   [for="heart"]:hover {
-        // //     color: $primary-color;
-        // //   }
-          
-        //   [for="heart"]::selection {
-        //     font-weight: 900;
-        //     color: none;
-        //     background: transparent;
-        //   }
-          
-        //   [for="heart"]::moz-selection {
-        //     color: none;
-        //     background: transparent;
-        //   }
-          
-        //   [id="heart"]:checked + label {
-        //     font-weight: 900;
-        //     color: $primary-color;
-        //     will-change: font-size;
-        //     animation: heart 1s cubic-bezier(.17, .89, .32, 1.49);
-        //   }
-          
-          
-          
-        //   @keyframes heart {0%, 17.5% {font-size: 0;}}
           
             
         p {
@@ -257,6 +230,11 @@ header {
             border-radius: 20px 20px 0 0;
             object-fit: cover;
             margin-bottom: 15px;
+            object-fit: cover;
+            margin-bottom: 15px;
+            position: relative;
+            left: -10px;
+            margin: 0;
         }
     }
 }
@@ -333,6 +311,10 @@ header {
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 3px 3px 8px 5px #ddd;
+            animation: fadeIn 1s ease-in-out both;
+            line-height: 1.4;
+            overflow: hidden;
+        
 
             h3 {
                 margin: 10px 0 2px 16px;
@@ -345,7 +327,7 @@ header {
             .check {
                 display: flex;
                 float: right;
-                position: relative;
+                
                 background: $tertiary-color;
                 width: 62px;
                 height: 97px;
@@ -355,6 +337,10 @@ header {
                 justify-content: center;
                 font-size: 2rem;
                 color: #fff;
+                transition: 1s;
+                transform: translateX(70px);
+                position: absolute;
+                right: 0;
             }
         }
 
