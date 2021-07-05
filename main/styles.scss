@@ -40,6 +40,54 @@ body {
     }
 }
 
+.loader {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: #ffffffe6;
+    animation: loader 1s;
+    animation-delay: 1.75s;
+    animation-fill-mode: both;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  .lds-hourglass {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 32px solid #fff;
+    border-color: $primary-color transparent $secondary-color transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(900deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(1800deg);
+    }
+  }
+}
+
 
 
 header {
@@ -184,11 +232,12 @@ header {
             position: absolute;
             height: 2rem;
             width: 5rem;
-            right: 0;
+            right: 12px;
             top: 1rem;
             border-radius: 5px;
             justify-content: center;
             align-items: center;
+            z-index: 1;
         }
 
         a {
@@ -200,14 +249,15 @@ header {
             
         }
 
-        i {
+        .card-heart {
             float: right;
             margin-right: 10px;
             position: relative;
-            top: 0;
+            top: -47px;
             right: 20px;
             font-size: 2rem;
-            transition: color .5s, transform .3s;
+            transition: all .3s, transform .3s;
+            
 
             &:hover,::before {
                 font-weight: 900;
@@ -276,11 +326,12 @@ header {
   position: relative;
   top: -180px;
 
-  .far {
-    
+  .menu-heart {
+    position: relative;
+    top: 0;
     font-size: 2rem;
 
-    :hover {
+    &:hover {
         font-weight: 900;
         color: $primary-color;
     }
@@ -304,6 +355,9 @@ header {
         padding-bottom: 5rem;
 
         .food {
+            display: flex;
+            justify-content: space-around;
+            position: relative;
             height: 6rem;
             width: 95%;
             gap: 5px;
@@ -311,17 +365,34 @@ header {
             background-color: #fff;
             border-radius: 20px;
             box-shadow: 3px 3px 8px 5px #ddd;
-            animation: fadeIn 1s ease-in-out both;
-            line-height: 1.4;
             overflow: hidden;
-        
+            animation: fadeIn 3s;
 
-            h3 {
-                margin: 10px 0 2px 16px;
+            @keyframes fadeIn {
+                0% {opacity:0;}
+                100% {opacity:1;}
+            }
+              
+              
+        
+            .dish-title {
+                display: flex;
+                flex-direction: column;
+                width: 70%;
+                justify-content: space-evenly;
+            }
+            p {
+                margin: 0;
+            }
+
+            h4 {
+                margin: 0;
             }
 
             .price {
                 font-weight: bold;
+                margin-bottom: 20px;
+                align-self: flex-end;
             }
 
             .check {
@@ -330,18 +401,23 @@ header {
                 
                 background: $tertiary-color;
                 width: 62px;
-                height: 97px;
-                bottom: 91px;
+                height: inherit;
                 border-radius: 0 20px 20px 0;
                 align-items: center;
                 justify-content: center;
                 font-size: 2rem;
                 color: #fff;
-                transition: 1s;
-                transform: translateX(70px);
                 position: absolute;
-                right: 0;
+                right: -65px;
+                transition: transform 330ms ease-in-out;
+
+                 
             }
+
+          &:hover .check {
+                    transform: translate(-64px);
+
+            }  
         }
 
         .food-title::before {
