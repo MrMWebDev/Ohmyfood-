@@ -13,6 +13,91 @@ body h2 {
   margin-left: 25px;
 }
 
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: #ffffffe6;
+  -webkit-animation: loader 1s;
+          animation: loader 1s;
+  -webkit-animation-delay: 1.75s;
+          animation-delay: 1.75s;
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.loader .lds-hourglass {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loader .lds-hourglass:after {
+  content: " ";
+  display: block;
+  border-radius: 50%;
+  width: 0;
+  height: 0;
+  margin: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 32px solid #fff;
+  border-color: #9356dc transparent #ff79da transparent;
+  -webkit-animation: lds-hourglass 1.2s infinite;
+          animation: lds-hourglass 1.2s infinite;
+}
+
+@-webkit-keyframes lds-hourglass {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    -webkit-transform: rotate(900deg);
+            transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg);
+  }
+}
+
+@keyframes lds-hourglass {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+    -webkit-animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  }
+  50% {
+    -webkit-transform: rotate(900deg);
+            transform: rotate(900deg);
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  100% {
+    -webkit-transform: rotate(1800deg);
+            transform: rotate(1800deg);
+  }
+}
+
 header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,7 +349,7 @@ header .home-logo {
   position: absolute;
   height: 2rem;
   width: 5rem;
-  right: 0;
+  right: 12px;
   top: 1rem;
   border-radius: 5px;
   -webkit-box-pack: center;
@@ -273,6 +358,7 @@ header .home-logo {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 1;
 }
 
 .cards .card1 a {
@@ -282,20 +368,20 @@ header .home-logo {
   text-decoration: none;
 }
 
-.cards .card1 i {
+.cards .card1 .card-heart {
   float: right;
   margin-right: 10px;
   position: relative;
-  top: 0;
+  top: -47px;
   right: 20px;
   font-size: 2rem;
-  -webkit-transition: color .5s, -webkit-transform .3s;
-  transition: color .5s, -webkit-transform .3s;
-  transition: color .5s, transform .3s;
-  transition: color .5s, transform .3s, -webkit-transform .3s;
+  -webkit-transition: all .3s, -webkit-transform .3s;
+  transition: all .3s, -webkit-transform .3s;
+  transition: all .3s, transform .3s;
+  transition: all .3s, transform .3s, -webkit-transform .3s;
 }
 
-.cards .card1 i:hover, .cards .card1 i ::before {
+.cards .card1 .card-heart:hover, .cards .card1 .card-heart ::before {
   font-weight: 900;
   color: #9356dc;
   cursor: pointer;
@@ -369,11 +455,13 @@ header .home-logo {
   top: -180px;
 }
 
-.menu .far {
+.menu .menu-heart {
+  position: relative;
+  top: 0;
   font-size: 2rem;
 }
 
-.menu .far :hover {
+.menu .menu-heart:hover {
   font-weight: 900;
   color: #9356dc;
 }
@@ -422,6 +510,12 @@ header .home-logo {
 }
 
 .menu .menu1 .food {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
   height: 6rem;
   width: 95%;
   gap: 5px;
@@ -430,18 +524,56 @@ header .home-logo {
   border-radius: 20px;
   -webkit-box-shadow: 3px 3px 8px 5px #ddd;
           box-shadow: 3px 3px 8px 5px #ddd;
-  -webkit-animation: fadeIn 1s ease-in-out both;
-          animation: fadeIn 1s ease-in-out both;
-  line-height: 1.4;
   overflow: hidden;
+  -webkit-animation: fadeIn 3s;
+          animation: fadeIn 3s;
 }
 
-.menu .menu1 .food h3 {
-  margin: 10px 0 2px 16px;
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.menu .menu1 .food .dish-title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 70%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.menu .menu1 .food p {
+  margin: 0;
+}
+
+.menu .menu1 .food h4 {
+  margin: 0;
 }
 
 .menu .menu1 .food .price {
   font-weight: bold;
+  margin-bottom: 20px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
 
 .menu .menu1 .food .check {
@@ -451,8 +583,7 @@ header .home-logo {
   float: right;
   background: #99e2d0;
   width: 62px;
-  height: 97px;
-  bottom: 91px;
+  height: inherit;
   border-radius: 0 20px 20px 0;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -462,12 +593,17 @@ header .home-logo {
           justify-content: center;
   font-size: 2rem;
   color: #fff;
-  -webkit-transition: 1s;
-  transition: 1s;
-  -webkit-transform: translateX(70px);
-          transform: translateX(70px);
   position: absolute;
-  right: 0;
+  right: -65px;
+  -webkit-transition: -webkit-transform 330ms ease-in-out;
+  transition: -webkit-transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
+}
+
+.menu .menu1 .food:hover .check {
+  -webkit-transform: translate(-64px);
+          transform: translate(-64px);
 }
 
 .menu .menu1 .food-title::before {
