@@ -141,7 +141,7 @@ body h2 {
   }
   100% {
     opacity: 0;
-    z-index: 0;
+    z-index: -1;
   }
 }
 
@@ -154,7 +154,7 @@ body h2 {
   }
   100% {
     opacity: 0;
-    z-index: 0;
+    z-index: -1;
   }
 }
 
@@ -192,7 +192,7 @@ header .home-logo {
 }
 
 .home-btn i {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #000;
 }
 
@@ -537,11 +537,18 @@ header .home-logo {
   position: relative;
   top: 0;
   font-size: 2rem;
+  -webkit-transition: all 0.3s, -webkit-transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
+  transition: all 0.3s, -webkit-transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
+  transition: all 0.3s, transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
+  transition: all 0.3s, transform 0.3s cubic-bezier(0, 0, 0.88, 2.31), -webkit-transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
 }
 
-.menu .menu-heart:hover {
-  font-weight: 900;
+.menu .menu-heart:hover, .menu .menu-heart ::before {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
   color: #9356dc;
+  cursor: pointer;
+  font-weight: 900;
 }
 
 .menu p {
@@ -688,9 +695,23 @@ header .home-logo {
   transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
 }
 
+.menu .menu1 .food .check i {
+  -webkit-transition: -webkit-transform 350ms ease-in-out;
+  transition: -webkit-transform 350ms ease-in-out;
+  transition: transform 350ms ease-in-out;
+  transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
+  -webkit-transform: rotate(0deg) 350ms;
+          transform: rotate(0deg) 350ms;
+}
+
 .menu .menu1 .food:hover .check {
   -webkit-transform: translate(-64px);
           transform: translate(-64px);
+}
+
+.menu .menu1 .food:hover .check i {
+  -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
 }
 
 .menu .menu1 .food-title::before {
