@@ -19,7 +19,11 @@ $tertiary-color: #99e2d0;
 
 @mixin pink-btn {
   color: #fff;
-  background: linear-gradient(to bottom right, $secondary-color 0%, $primary-color 120%);
+  background: linear-gradient(
+    to bottom right,
+    $secondary-color 0%,
+    $primary-color 120%
+  );
   @include alignment();
   border-radius: 30px;
   width: 50%;
@@ -32,123 +36,127 @@ $tertiary-color: #99e2d0;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    margin: 0;
-    
+  font-family: "Roboto", sans-serif;
+  margin: 0;
 
-    
-    h2 {
-        font-weight: bolder;
-        margin-left: 25px;
-    }
-
-    
-}
-
-.loader {
-        position: fixed;
-        width: 100vw;
-        height: 100vh;
-        left: 0;
-        top: 0;
-        background-color: #ffffffe6;
-        z-index: 2;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        animation: loader 3.5s forwards;
-        
-        
-        .lds-heart {
-            display: inline-block;
-            position: relative;
-            width: 80px;
-            height: 80px;
-            transform: rotate(45deg);
-            transform-origin: 40px 40px;
-          }
-          .lds-heart div {
-            top: 32px;
-            left: 32px;
-            position: absolute;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(to bottom right, $secondary-color -30%, $primary-color 80%);
-            animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-          }
-          .lds-heart div:after,
-          .lds-heart div:before {
-            content: " ";
-            position: absolute;
-            display: block;
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(to bottom right, $secondary-color 0%, $primary-color 120%);
-          }
-          .lds-heart div:before {
-            left: -24px;
-            border-radius: 50% 0 0 50%;
-          }
-          .lds-heart div:after {
-            top: -24px;
-            border-radius: 50% 50% 0 0;
-          }
-          @keyframes lds-heart {
-            0% {
-              transform: scale(0.95);
-            }
-            5% {
-              transform: scale(1.1);
-            }
-            39% {
-              transform: scale(0.85);
-            }
-            45% {
-              transform: scale(1);
-            }
-            60% {
-              transform: scale(0.95);
-            }
-            100% {
-              transform: scale(0.9);
-            }
-          }
-
-          @keyframes loader {
-            0% {opacity: 1.3;}
-            50% {opacity: 1;}
-            100% {opacity: 0;
-            z-index: -1;}
-        }  
-          
-    }
-
-
-
-header {
-    @include alignment();
-    flex-direction: row;
-    justify-content: unset;
-    height: 3rem;
-    gap: 4rem;
-    margin: 10px 0;
-
-    .home-logo {
-        margin-left: 25%
-    }
-}
-
-.home-btn {
-  margin-left: 20px;
-  float: left;
-
-  i {
-      font-size: 1.3rem;
-      color: #000
+  h2 {
+    font-weight: bolder;
+    margin-left: 25px;
   }
 }
 
+.loader {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  background-color: #ffffffe6;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: loader 3.5s forwards;
 
+  .lds-heart {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+    transform: rotate(45deg);
+    transform-origin: 40px 40px;
+  }
+  .lds-heart div {
+    top: 32px;
+    left: 32px;
+    position: absolute;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(
+      to bottom right,
+      $secondary-color -30%,
+      $primary-color 80%
+    );
+    animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+  .lds-heart div:after,
+  .lds-heart div:before {
+    content: " ";
+    position: absolute;
+    display: block;
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(
+      to bottom right,
+      $secondary-color 0%,
+      $primary-color 120%
+    );
+  }
+  .lds-heart div:before {
+    left: -24px;
+    border-radius: 50% 0 0 50%;
+  }
+  .lds-heart div:after {
+    top: -24px;
+    border-radius: 50% 50% 0 0;
+  }
+  @keyframes lds-heart {
+    0% {
+      transform: scale(0.95);
+    }
+    5% {
+      transform: scale(1.1);
+    }
+    39% {
+      transform: scale(0.85);
+    }
+    45% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(0.9);
+    }
+  }
+
+  @keyframes loader {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 0;
+      z-index: -1;
+    }
+  }
+}
+
+.home-logo {
+  @include alignment();
+}
+
+header {
+  @include alignment();
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 3rem;
+  gap: 20%;
+  margin: 10px 0;
+}
+
+.home-btn {
+  margin-left: 10px;
+  float: left;
+
+  i {
+    font-size: 1.3rem;
+    color: #000;
+  }
+}
 
 .main-home {
   @include alignment();
@@ -182,181 +190,166 @@ header {
   filter: drop-shadow(0px 5px 5px #aaa);
   transition: all 0.3s ease-in-out;
 
-    &:hover {
-        transform: scale(1.1);
-        transition: all 0.6s ease-in-out;
-    }
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.6s ease-in-out;
+  }
 }
 
 .how-it-works {
+  width: 100%;
+  height: 25rem;
+  gap: 1.5rem;
+  margin: 10px 0;
+
+  ol {
+    list-style: none;
+    counter-reset: my-awesome-counter;
     width: 100%;
-    height: 25rem;
-    gap: 1.5rem;
-    margin: 10px 0;
+    padding: 0;
+    margin-top: 50px;
 
-    ol {
-        list-style: none;
-        counter-reset: my-awesome-counter;
-        width: 100%;
-        padding: 0;
-        margin-top: 50px;
+    li {
+      counter-increment: my-awesome-counter;
+      width: 95%;
+      align-items: center;
+      display: flex;
+      margin: 0 0 30px 20px;
+      font-weight: bold;
 
-    
-
-        li {
-            counter-increment: my-awesome-counter;
-            width: 95%;
-            align-items: center;
-            display: flex;
-            margin: 0 0 30px 20px;
-            font-weight: bold;
-
-            :hover {
-            background-color: #9256dc27;
-            
-                i {
-                    color: $primary-color;
-                }
-            }
-        }
-
-        
-    }
-
-    li::before {
-        content: counter(my-awesome-counter);
-        background: $primary-color;
-        width: 2rem;
-        height: 2rem;
-        border-radius: 50%;
-        line-height: 2rem;
-        color: white;
-        text-align: center;
-        float: left;
-        position: relative;
-        left: 10px;
-    }
-  
-    .choose {
-        @include alignment();
-        justify-content: unset;
-        flex-direction: row;
-        margin: 0;
-        @include how-btn();
-        cursor: pointer;  
+      :hover {
+        background-color: #9256dc27;
 
         i {
-            margin: 10px 30px 10px 20px;
-            color: #888888;
+          color: $primary-color;
         }
+      }
     }
-  
+  }
+
+  li::before {
+    content: counter(my-awesome-counter);
+    background: $primary-color;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    line-height: 2rem;
+    color: white;
+    text-align: center;
+    float: left;
+    position: relative;
+    left: 10px;
+  }
+
+  .choose {
+    @include alignment();
+    justify-content: unset;
+    flex-direction: row;
+    margin: 0;
+    @include how-btn();
+    cursor: pointer;
+
+    i {
+      margin: 10px 30px 10px 20px;
+      color: #888888;
+    }
+  }
 }
 
 .cards {
-    @include alignment();
-    gap: 2rem;
-    width: 100%;
-    background: #f2f2f2;
-    margin-top: 2rem;
-    padding-bottom: 4rem;
-    align-items: unset;
+  @include alignment();
+  gap: 2rem;
+  width: 100%;
+  background: #f2f2f2;
+  margin-top: 2rem;
+  padding-bottom: 4rem;
+  align-items: unset;
 
-    .card1 {
-        height: 17rem;
-        width: 90%;
-        background-color: #fff;
-        border-radius: 20px;
-        filter: drop-shadow(0px 5px 5px #aaa);
-        cursor: pointer;
-        margin-left: 20px;
+  .card1 {
+    height: 17rem;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 20px;
+    filter: drop-shadow(0px 5px 5px #aaa);
+    cursor: pointer;
+    margin-left: 20px;
 
-        .new {
-            color: #278870;
-            background-color: $tertiary-color;
-            display: flex;
-            position: absolute;
-            height: 2rem;
-            width: 5rem;
-            right: 12px;
-            top: 1rem;
-            border-radius: 5px;
-            justify-content: center;
-            align-items: center;
-            z-index: 1;
-        }
-
-        a {
-            color: #000;
-            font-weight: bold;
-            margin-left: 10px;
-            text-decoration: none;
-            
-            
-        }
-
-        .card-heart {
-            float: right;
-            margin-right: 10px;
-            position: relative;
-            top: -47px;
-            right: 20px;
-            font-size: 2rem;
-            transition: all .3s, transform .3s cubic-bezier(0, 0, 0.88, 2.31);
-            
-
-            &:hover,::before {
-                transform: scale(1.2);
-                color: $primary-color;
-                cursor: pointer;
-                font-weight: 900;
-                
-            }
-
-        }
-
-        .dish {
-            font-weight: bold;
-        }  
-            
-        p {
-            margin: 7px 10px;
-        }
-
-        img {
-            height: 75%;
-            width: 100%;
-            border-radius: 20px 20px 0 0;
-            object-fit: cover;
-            margin-bottom: 15px;
-            object-fit: cover;
-            margin-bottom: 15px;
-            position: relative;
-            left: -10px;
-            margin: 0;
-        }
+    .new {
+      color: #278870;
+      background-color: $tertiary-color;
+      display: flex;
+      position: absolute;
+      height: 2rem;
+      width: 5rem;
+      right: 12px;
+      top: 1rem;
+      border-radius: 5px;
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
     }
-}
 
+    a {
+      color: #000;
+      font-weight: bold;
+      margin-left: 10px;
+      text-decoration: none;
+    }
 
+    .card-heart {
+      float: right;
+      margin-right: 10px;
+      position: relative;
+      top: -47px;
+      right: 20px;
+      font-size: 2rem;
+      transition: all 0.3s, transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
 
-.main-menu {
-    width: 100%;
-    height: 1960px;
-}
-.bkgd-pic {
-    width: 100%;
-    height: 275px;
+      &:hover,
+      ::before {
+        transform: scale(1.2);
+        color: $primary-color;
+        cursor: pointer;
+        font-weight: 900;
+      }
+    }
+
+    .dish {
+      font-weight: bold;
+    }
+
+    p {
+      margin: 7px 10px;
+    }
 
     img {
-        width: 100%;
-        object-fit: cover;
+      height: 75%;
+      width: 100%;
+      border-radius: 20px 20px 0 0;
+      object-fit: cover;
+      margin-bottom: 15px;
+      object-fit: cover;
+      margin-bottom: 15px;
+      position: relative;
+      left: -10px;
+      margin: 0;
     }
-    
+  }
 }
 
+.main-menu {
+  width: 100%;
+  height: 1960px;
+}
+.bkgd-pic {
+  width: 100%;
+  height: 275px;
 
-
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
 
 .menu-title {
   @include alignment();
@@ -379,9 +372,10 @@ header {
     position: relative;
     top: 0;
     font-size: 2rem;
-    transition: all .3s, transform .3s cubic-bezier(0, 0, 0.88, 2.31);
+    transition: all 0.3s, transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
 
-    &:hover, ::before {
+    &:hover,
+    ::before {
       transform: scale(1.2);
       color: $primary-color;
       cursor: pointer;
@@ -399,125 +393,195 @@ header {
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        transform: scale(1.1);
-        transition: all 0.6s ease-in-out;
+      transform: scale(1.1);
+      transition: all 0.6s ease-in-out;
     }
   }
 
-    .menu1 {
+  .menu1 {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-around;
+    margin-left: 1rem;
+    padding-bottom: 5rem;
+
+    .food-title p::before {
+      content: "";
+      position: absolute;
+      left: 32px;
+      top: 105px;
+      border-bottom: 3px solid $tertiary-color;
+      width: 3rem;
+    }
+
+    .food {
+      display: flex;
+      justify-content: space-around;
+      position: relative;
+      height: 6rem;
+      width: 95%;
+      gap: 5px;
+      cursor: pointer;
+      background-color: #fff;
+      border-radius: 20px;
+      box-shadow: 3px 3px 8px 5px #ddd;
+      overflow: hidden;
+      animation: fadeIn 3s;
+
+      @keyframes fadeIn {
+        0% {
+          opacity: 0;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+
+      .dish-title {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
-        justify-content: space-around;
-        margin-left: 1rem;
-        padding-bottom: 5rem;
+        width: 70%;
+        justify-content: space-evenly;
+      }
+      p {
+        margin: 0;
+      }
 
-        .food {
-            display: flex;
-            justify-content: space-around;
-            position: relative;
-            height: 6rem;
-            width: 95%;
-            gap: 5px;
-            cursor: pointer;
-            background-color: #fff;
-            border-radius: 20px;
-            box-shadow: 3px 3px 8px 5px #ddd;
-            overflow: hidden;
-            animation: fadeIn 3s;
+      h4 {
+        margin: 0;
+      }
 
-            @keyframes fadeIn {
-                0% {opacity:0;}
-                100% {opacity:1;}
-            }
-              
-              
-        
-            .dish-title {
-                display: flex;
-                flex-direction: column;
-                width: 70%;
-                justify-content: space-evenly;
-            }
-            p {
-                margin: 0;
-            }
+      .price {
+        font-weight: bold;
+        margin-bottom: 20px;
+        align-self: flex-end;
+      }
 
-            h4 {
-                margin: 0;
-            }
+      .check {
+        display: flex;
+        float: right;
 
-            .price {
-                font-weight: bold;
-                margin-bottom: 20px;
-                align-self: flex-end;
-            }
+        background: $tertiary-color;
+        width: 62px;
+        height: inherit;
+        border-radius: 0 20px 20px 0;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #fff;
+        position: absolute;
+        right: -65px;
+        transition: transform 330ms ease-in-out;
 
-            .check {
-                display: flex;
-                float: right;
-                
-                background: $tertiary-color;
-                width: 62px;
-                height: inherit;
-                border-radius: 0 20px 20px 0;
-                align-items: center;
-                justify-content: center;
-                font-size: 2rem;
-                color: #fff;
-                position: absolute;
-                right: -65px;
-                transition: transform 330ms ease-in-out;
-
-                i {
-                    transition: transform 350ms ease-in-out;
-                    transform: rotate(0deg) 350ms;
-
-                    
-                }
-                
-                 
-            }
-
-          &:hover .check {
-                    transform: translate(-64px);
-                    & i {
-                    transform: rotate(360deg);
-                  }
-            }  
+        i {
+          transition: all 350ms ease-in-out;
+          transform: rotate(0deg) 350ms;
         }
+      }
 
-        .food-title::before {
-            content: "";
-            position: absolute;
-            left: 32px;
-            top: 105px;
-            border-bottom: 3px solid $tertiary-color;
-            width: 13%;
+      &:hover .check {
+        transform: translate(-64px);
+        & i {
+          transform: rotate(360deg);
         }
+      }
     }
+  }
 }
 
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+  color: #fff;
+  background: #272727;
+
+  h2 {
+    font-family: "Shrikhand", cursive;
+  }
+
+  li {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: baseline;
-    color: #fff;
-    background: #272727;
+    gap: 8px;
+
+    :before {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 770px) {
+  header {
+    gap: 30%;
+    margin: 10px 0;
+  }
+
+  .main-top {
+    width: 75%;
+
+    p {
+      width: 50%;
+    }
+  }
+
+  .main-btn {
+
+    width: 30%;
+  }
+
+  .how-it-works {
+    width: 100%;
+    height: 15rem;
+    gap: 1.5rem;
+    margin: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
 
     h2 {
-        font-family: "Shrikhand", cursive;
+      display: flex;
+      margin-left: 25px;
+      justify-content: center;
+      width: 100%;
+    }
+    ol {
+      display: flex;
+    }        
+  }
+
+  .cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    h2 {
+      @include alignment();
+      width: 100%;
     }
 
-    li {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-
-        :before {
-            font-size: 12px;
-            margin-right: 5px;
-        }
+    .card1 {
+      width: 40%;
     }
+  }
+
+  .main-menu {
+    height: 1175px;
+
+    .menu1 {
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 97%;
+      margin-right: 15px;
+
+      .food-title {
+        width: 100%;
+      }
+
+      .food {
+        width: 25%;
+      }
+    }
+  }
 }
