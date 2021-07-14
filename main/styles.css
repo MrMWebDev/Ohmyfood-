@@ -53,8 +53,8 @@ body h2 {
   height: 32px;
   background: -webkit-gradient(linear, left top, right bottom, color-stop(-30%, #ff79da), color-stop(80%, #9356dc));
   background: linear-gradient(to bottom right, #ff79da -30%, #9356dc 80%);
-  -webkit-animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-          animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .loader .lds-heart div:after,
@@ -134,10 +134,10 @@ body h2 {
 
 @-webkit-keyframes loader {
   0% {
-    opacity: 1.3;
+    opacity: 1;
   }
   50% {
-    opacity: 1;
+    opacity: .5;
   }
   100% {
     opacity: 0;
@@ -147,15 +147,31 @@ body h2 {
 
 @keyframes loader {
   0% {
-    opacity: 1.3;
+    opacity: 1;
   }
   50% {
-    opacity: 1;
+    opacity: .5;
   }
   100% {
     opacity: 0;
     z-index: -1;
   }
+}
+
+.home-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 header {
@@ -174,20 +190,16 @@ header {
           align-items: center;
   -ms-flex-direction: row;
       flex-direction: row;
-  -webkit-box-pack: unset;
-      -ms-flex-pack: unset;
-          justify-content: unset;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   height: 3rem;
-  gap: 4rem;
+  gap: 20%;
   margin: 10px 0;
 }
 
-header .home-logo {
-  margin-left: 25%;
-}
-
 .home-btn {
-  margin-left: 20px;
+  margin-left: 10px;
   float: left;
 }
 
@@ -455,7 +467,8 @@ header .home-logo {
   transition: all 0.3s, transform 0.3s cubic-bezier(0, 0, 0.88, 2.31), -webkit-transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
 }
 
-.cards .card1 .card-heart:hover, .cards .card1 .card-heart ::before {
+.cards .card1 .card-heart:hover,
+.cards .card1 .card-heart ::before {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   color: #9356dc;
@@ -543,7 +556,8 @@ header .home-logo {
   transition: all 0.3s, transform 0.3s cubic-bezier(0, 0, 0.88, 2.31), -webkit-transform 0.3s cubic-bezier(0, 0, 0.88, 2.31);
 }
 
-.menu .menu-heart:hover, .menu .menu-heart ::before {
+.menu .menu-heart:hover,
+.menu .menu-heart ::before {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
   color: #9356dc;
@@ -601,6 +615,15 @@ header .home-logo {
       justify-content: space-around;
   margin-left: 1rem;
   padding-bottom: 5rem;
+}
+
+.menu .menu1 .food-title p::before {
+  content: "";
+  position: absolute;
+  left: 32px;
+  top: 105px;
+  border-bottom: 3px solid #99e2d0;
+  width: 3rem;
 }
 
 .menu .menu1 .food {
@@ -696,10 +719,8 @@ header .home-logo {
 }
 
 .menu .menu1 .food .check i {
-  -webkit-transition: -webkit-transform 350ms ease-in-out;
-  transition: -webkit-transform 350ms ease-in-out;
-  transition: transform 350ms ease-in-out;
-  transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
+  -webkit-transition: all 350ms ease-in-out;
+  transition: all 350ms ease-in-out;
   -webkit-transform: rotate(0deg) 350ms;
           transform: rotate(0deg) 350ms;
 }
@@ -712,15 +733,6 @@ header .home-logo {
 .menu .menu1 .food:hover .check i {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
-}
-
-.menu .menu1 .food-title::before {
-  content: "";
-  position: absolute;
-  left: 32px;
-  top: 105px;
-  border-bottom: 3px solid #99e2d0;
-  width: 13%;
 }
 
 footer {
@@ -759,5 +771,93 @@ footer li {
 footer li :before {
   font-size: 12px;
   margin-right: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    gap: 30%;
+    margin: 10px 0;
+  }
+  .main-top {
+    width: 75%;
+  }
+  .main-top p {
+    width: 50%;
+  }
+  .main-btn {
+    width: 30%;
+  }
+  .how-it-works {
+    width: 100%;
+    height: 15rem;
+    gap: 1.5rem;
+    margin: 10px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .how-it-works h2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 25px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+  .how-it-works ol {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .cards {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .cards h2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+  }
+  .cards .card1 {
+    width: 40%;
+  }
+  .main-menu {
+    height: 1175px;
+  }
+  .main-menu .menu1 {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 97%;
+    margin-right: 15px;
+  }
+  .main-menu .menu1 .food-title {
+    width: 100%;
+  }
+  .main-menu .menu1 .food {
+    width: 25%;
+  }
 }
 /*# sourceMappingURL=styles.css.map */
