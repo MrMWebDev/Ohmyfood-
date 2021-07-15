@@ -617,7 +617,7 @@ header {
   padding-bottom: 5rem;
 }
 
-.menu .menu1 .food-title p::before {
+.menu .menu1 .food-title::before {
   content: "";
   position: absolute;
   left: 32px;
@@ -672,6 +672,8 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 70%;
   -webkit-box-pack: space-evenly;
       -ms-flex-pack: space-evenly;
@@ -691,6 +693,10 @@ header {
   margin-bottom: 20px;
   -ms-flex-item-align: end;
       align-self: flex-end;
+  -webkit-transition: -webkit-transform 330ms ease-in-out;
+  transition: -webkit-transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out;
+  transition: transform 330ms ease-in-out, -webkit-transform 330ms ease-in-out;
 }
 
 .menu .menu1 .food .check {
@@ -730,9 +736,18 @@ header {
           transform: translate(-64px);
 }
 
-.menu .menu1 .food:hover .check i {
+.menu .menu1 .food:hover i {
   -webkit-transform: rotate(360deg);
           transform: rotate(360deg);
+}
+
+.menu .menu1 .food:hover .dish-title {
+  width: 60%;
+}
+
+.menu .menu1 .food:hover .price {
+  -webkit-transform: translate(-40px);
+          transform: translate(-40px);
 }
 
 footer {

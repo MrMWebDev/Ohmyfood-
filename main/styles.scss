@@ -406,14 +406,14 @@ header {
     margin-left: 1rem;
     padding-bottom: 5rem;
 
-    .food-title p::before {
-      content: "";
-      position: absolute;
-      left: 32px;
-      top: 105px;
-      border-bottom: 3px solid $tertiary-color;
-      width: 3rem;
-    }
+    .food-title::before {
+        content: "";
+        position: absolute;
+        left: 32px;
+        top: 105px;
+        border-bottom: 3px solid $tertiary-color;
+        width: 3rem;
+      } 
 
     .food {
       display: flex;
@@ -441,8 +441,10 @@ header {
       .dish-title {
         display: flex;
         flex-direction: column;
+        flex-wrap: wrap;
         width: 70%;
         justify-content: space-evenly;
+
       }
       p {
         margin: 0;
@@ -456,12 +458,12 @@ header {
         font-weight: bold;
         margin-bottom: 20px;
         align-self: flex-end;
+        transition: transform 330ms ease-in-out;
       }
 
       .check {
         display: flex;
         float: right;
-
         background: $tertiary-color;
         width: 62px;
         height: inherit;
@@ -480,10 +482,20 @@ header {
         }
       }
 
-      &:hover .check {
-        transform: translate(-64px);
-        & i {
+      &:hover {
+        .check {
+          transform: translate(-64px);
+        }
+        i {
           transform: rotate(360deg);
+        }
+
+        .dish-title {
+          width: 60%;
+        }
+
+        .price {
+          transform: translate(-40px);
         }
       }
     }
