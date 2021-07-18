@@ -645,8 +645,8 @@ header {
 .menu .menu1 .food-title::before {
   content: "";
   position: absolute;
-  left: 15px;
-  top: 32px;
+  left: 0px;
+  top: 20px;
   border-bottom: 3px solid #99e2d0;
   width: 3rem;
 }

@@ -423,8 +423,8 @@ header {
         &::before {
         content: "";
         position: absolute;
-        left: 15px;
-        top: 32px;
+        left: 0px;
+        top: 20px;
         border-bottom: 3px solid $tertiary-color;
         width: 3rem;
       } 
