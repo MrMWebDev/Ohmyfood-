@@ -56,7 +56,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loader 3.5s forwards;
+  animation: loader 5s forwards;
 
   .lds-heart {
     display: inline-block;
@@ -125,12 +125,21 @@ body {
     0% {
       opacity: 1;
     }
-    50% {
-      opacity: .5;
+    20% {
+      opacity: 0.8;
+    }
+    40% {
+      opacity: 0.6;
+    }
+    60% {
+      opacity: 0.4;
+    }
+    80% {
+      opacity: 0.2;
     }
     100% {
       opacity: 0;
-      z-index: -1;
+      z-index: 0;
     }
   }
 }
@@ -193,6 +202,7 @@ header {
   &:hover {
     transform: scale(1.1);
     transition: all 0.6s ease-in-out;
+    filter: drop-shadow(0px 5px 5px #aaa);
   }
 }
 
@@ -273,6 +283,7 @@ header {
     filter: drop-shadow(0px 5px 5px #aaa);
     cursor: pointer;
     margin-left: 20px;
+    position: relative;
 
     .new {
       color: #278870;
@@ -406,14 +417,18 @@ header {
     margin-left: 1rem;
     padding-bottom: 5rem;
 
-    .food-title::before {
+    .food-title {
+      position: relative;
+
+        &::before {
         content: "";
         position: absolute;
-        left: 32px;
-        top: 105px;
+        left: 15px;
+        top: 32px;
         border-bottom: 3px solid $tertiary-color;
         width: 3rem;
       } 
+    }
 
     .food {
       display: flex;
@@ -490,12 +505,8 @@ header {
           transform: rotate(360deg);
         }
 
-        .dish-title {
-          width: 60%;
-        }
-
         .price {
-          transform: translate(-40px);
+          transform: translate(-48px);
         }
       }
     }
@@ -528,7 +539,7 @@ footer {
 
 @media screen and (min-width: 770px) {
   header {
-    gap: 30%;
+    gap: 40%;
     margin: 10px 0;
   }
 

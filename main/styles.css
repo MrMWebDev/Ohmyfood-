@@ -30,8 +30,8 @@ body h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: loader 3.5s forwards;
-          animation: loader 3.5s forwards;
+  -webkit-animation: loader 5s forwards;
+          animation: loader 5s forwards;
 }
 
 .loader .lds-heart {
@@ -136,12 +136,21 @@ body h2 {
   0% {
     opacity: 1;
   }
-  50% {
-    opacity: .5;
+  20% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.2;
   }
   100% {
     opacity: 0;
-    z-index: -1;
+    z-index: 0;
   }
 }
 
@@ -149,12 +158,21 @@ body h2 {
   0% {
     opacity: 1;
   }
-  50% {
-    opacity: .5;
+  20% {
+    opacity: 0.8;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  80% {
+    opacity: 0.2;
   }
   100% {
     opacity: 0;
-    z-index: -1;
+    z-index: 0;
   }
 }
 
@@ -305,6 +323,8 @@ header {
           transform: scale(1.1);
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
+  -webkit-filter: drop-shadow(0px 5px 5px #aaa);
+          filter: drop-shadow(0px 5px 5px #aaa);
 }
 
 .how-it-works {
@@ -424,6 +444,7 @@ header {
           filter: drop-shadow(0px 5px 5px #aaa);
   cursor: pointer;
   margin-left: 20px;
+  position: relative;
 }
 
 .cards .card1 .new {
@@ -617,11 +638,15 @@ header {
   padding-bottom: 5rem;
 }
 
+.menu .menu1 .food-title {
+  position: relative;
+}
+
 .menu .menu1 .food-title::before {
   content: "";
   position: absolute;
-  left: 32px;
-  top: 105px;
+  left: 15px;
+  top: 32px;
   border-bottom: 3px solid #99e2d0;
   width: 3rem;
 }
@@ -741,13 +766,9 @@ header {
           transform: rotate(360deg);
 }
 
-.menu .menu1 .food:hover .dish-title {
-  width: 60%;
-}
-
 .menu .menu1 .food:hover .price {
-  -webkit-transform: translate(-40px);
-          transform: translate(-40px);
+  -webkit-transform: translate(-48px);
+          transform: translate(-48px);
 }
 
 footer {
@@ -790,7 +811,7 @@ footer li :before {
 
 @media screen and (min-width: 770px) {
   header {
-    gap: 30%;
+    gap: 40%;
     margin: 10px 0;
   }
   .main-top {
