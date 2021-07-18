@@ -56,7 +56,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  animation: loader 3.5s forwards;
+  animation: loader 5s forwards;
 
   .lds-heart {
     display: inline-block;
@@ -77,7 +77,7 @@ body {
       $secondary-color -30%,
       $primary-color 80%
     );
-    animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation: lds-heart 3.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   .lds-heart div:after,
   .lds-heart div:before {
@@ -125,8 +125,14 @@ body {
     0% {
       opacity: 1;
     }
+    25% {
+      opacity: .75;
+    }
     50% {
       opacity: .5;
+    }
+    75% {
+      opacity: .25;
     }
     100% {
       opacity: 0;
@@ -193,6 +199,7 @@ header {
   &:hover {
     transform: scale(1.1);
     transition: all 0.6s ease-in-out;
+    filter: drop-shadow(0px 5px 5px #aaa);
   }
 }
 
@@ -528,7 +535,7 @@ footer {
 
 @media screen and (min-width: 770px) {
   header {
-    gap: 30%;
+    gap: 40%;
     margin: 10px 0;
   }
 

@@ -30,8 +30,8 @@ body h2 {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-animation: loader 3.5s forwards;
-          animation: loader 3.5s forwards;
+  -webkit-animation: loader 5s forwards;
+          animation: loader 5s forwards;
 }
 
 .loader .lds-heart {
@@ -53,8 +53,8 @@ body h2 {
   height: 32px;
   background: -webkit-gradient(linear, left top, right bottom, color-stop(-30%, #ff79da), color-stop(80%, #9356dc));
   background: linear-gradient(to bottom right, #ff79da -30%, #9356dc 80%);
-  -webkit-animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
-          animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+  -webkit-animation: lds-heart 3.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+          animation: lds-heart 3.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
 .loader .lds-heart div:after,
@@ -136,8 +136,14 @@ body h2 {
   0% {
     opacity: 1;
   }
+  25% {
+    opacity: .75;
+  }
   50% {
     opacity: .5;
+  }
+  75% {
+    opacity: .25;
   }
   100% {
     opacity: 0;
@@ -149,8 +155,14 @@ body h2 {
   0% {
     opacity: 1;
   }
+  25% {
+    opacity: .75;
+  }
   50% {
     opacity: .5;
+  }
+  75% {
+    opacity: .25;
   }
   100% {
     opacity: 0;
@@ -305,6 +317,8 @@ header {
           transform: scale(1.1);
   -webkit-transition: all 0.6s ease-in-out;
   transition: all 0.6s ease-in-out;
+  -webkit-filter: drop-shadow(0px 5px 5px #aaa);
+          filter: drop-shadow(0px 5px 5px #aaa);
 }
 
 .how-it-works {
@@ -790,7 +804,7 @@ footer li :before {
 
 @media screen and (min-width: 770px) {
   header {
-    gap: 30%;
+    gap: 40%;
     margin: 10px 0;
   }
   .main-top {
