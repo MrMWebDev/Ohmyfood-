@@ -77,7 +77,7 @@ body {
       $secondary-color -30%,
       $primary-color 80%
     );
-    animation: lds-heart 3.5s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    animation: lds-heart 1s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
   }
   .lds-heart div:after,
   .lds-heart div:before {
@@ -125,18 +125,21 @@ body {
     0% {
       opacity: 1;
     }
-    25% {
-      opacity: .75;
+    20% {
+      opacity: 0.8;
     }
-    50% {
-      opacity: .5;
+    40% {
+      opacity: 0.6;
     }
-    75% {
-      opacity: .25;
+    60% {
+      opacity: 0.4;
+    }
+    80% {
+      opacity: 0.2;
     }
     100% {
       opacity: 0;
-      z-index: -1;
+      z-index: 0;
     }
   }
 }
@@ -280,6 +283,7 @@ header {
     filter: drop-shadow(0px 5px 5px #aaa);
     cursor: pointer;
     margin-left: 20px;
+    position: relative;
 
     .new {
       color: #278870;
@@ -413,14 +417,18 @@ header {
     margin-left: 1rem;
     padding-bottom: 5rem;
 
-    .food-title::before {
+    .food-title {
+      position: relative;
+
+        &::before {
         content: "";
         position: absolute;
-        left: 32px;
-        top: 105px;
+        left: 15px;
+        top: 32px;
         border-bottom: 3px solid $tertiary-color;
         width: 3rem;
       } 
+    }
 
     .food {
       display: flex;
@@ -497,12 +505,8 @@ header {
           transform: rotate(360deg);
         }
 
-        .dish-title {
-          width: 60%;
-        }
-
         .price {
-          transform: translate(-40px);
+          transform: translate(-48px);
         }
       }
     }
