@@ -226,12 +226,17 @@ header {
       display: flex;
       margin: 0 0 30px 20px;
       font-weight: bold;
+      position: relative;
 
-      :hover {
-        background-color: #9256dc27;
+      &:hover {
+        .choose {
 
-        i {
-          color: $primary-color;
+        
+          background-color: #9256dc27;
+
+          i {
+            color: $primary-color;
+          }
         }
       }
     }

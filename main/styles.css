@@ -353,13 +353,14 @@ header {
   display: flex;
   margin: 0 0 30px 20px;
   font-weight: bold;
+  position: relative;
 }
 
-.how-it-works ol li :hover {
+.how-it-works ol li:hover .choose {
   background-color: #9256dc27;
 }
 
-.how-it-works ol li :hover i {
+.how-it-works ol li:hover .choose i {
   color: #9356dc;
 }
 
